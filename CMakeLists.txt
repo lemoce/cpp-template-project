@@ -14,7 +14,9 @@ file (GLOB TEST_SRC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} test/*.cpp)
 
 foreach (testSrc ${TEST_SRC})
 	get_filename_component (testName ${testSrc} NAME_WE)
-
+        if (WIN32)
+           add_definitions (-DLIBRARY_API_IMPORT)
+        endif (WIN32)
 	add_executable (${testName} ${testSrc})
 	target_link_libraries (${testName} ${Boost_LIBRARIES} arabic)
 

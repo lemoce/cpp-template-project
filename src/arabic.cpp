@@ -3,6 +3,6 @@
 #include "exceptions.h"
 #include <string>
 
-extern std::string arabic::convert(int arabic) {
+std::string arabic::convert(int arabic) {
     return "I";
 }
